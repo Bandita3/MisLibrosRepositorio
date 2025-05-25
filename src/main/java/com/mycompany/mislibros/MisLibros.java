@@ -9,7 +9,5 @@ public class MisLibros {
         Principal princ = new Principal();  
         princ.setVisible(true);
         princ.setLocationRelativeTo(null);
-        System.out.println("Programa ejecutado.");
-        System.out.println(":)");
     }
 }
