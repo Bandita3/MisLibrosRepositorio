@@ -304,6 +304,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.out.println("Cerrando programa....."); 
         System.exit(0); //cierra la aplicación
     }//GEN-LAST:event_btnSalirActionPerformed
 
