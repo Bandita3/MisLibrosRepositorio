@@ -9,7 +9,7 @@ public class Controladora {
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
     /*Este Método muestra todos los objetos libros que tengo en mi base de
         datos*/
-    public String mostrarLibros(){
+    public String mostrarLibros(){ //tengo que borrarlo
         
         String texto = "";
         List<Libro> listaLibros = controlPersis.traerLibros();
@@ -32,6 +32,9 @@ public class Controladora {
     public Libro traerLibro(int id){
         return controlPersis.traerLibro(id);
     }
+    public ArrayList<Libro> traerListaLibros(){
+        return controlPersis.traerListaLibros();
+    }
     //----------------autor--------------------------------------
     //CREATE - alta de registros
     public void crearAutor(Autor aut){
@@ -52,5 +55,7 @@ public class Controladora {
     public ArrayList<Autor> traerListaAutores(){
         return controlPersis.traerListaAutores();
     }
+    //Métodos ventanaPrincipal
+    
 }
 
