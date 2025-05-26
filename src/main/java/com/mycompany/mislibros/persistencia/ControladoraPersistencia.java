@@ -39,6 +39,11 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public ArrayList<Libro> traerListaLibros() {
+        List<Libro> listita = libJpa.findLibroEntities();
+        ArrayList<Libro> listaLibros = new ArrayList<Libro>(listita);
+        return listaLibros;
+    }
     //------------------autor
 
     public void crearAutor(Autor aut) {
@@ -70,5 +75,7 @@ public class ControladoraPersistencia {
         ArrayList<Autor> listaAutores = new ArrayList<Autor>(listita);
         return listaAutores;
     }
+
+    
     
 }
