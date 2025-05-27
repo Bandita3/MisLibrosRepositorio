@@ -13,6 +13,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 /**
  * @author Martín_Guerra
@@ -163,6 +164,24 @@ public class AutorJpaController implements Serializable {
             em.close();
         }
     }
+    
+    public Autor findAutorByName(String name) {
+    EntityManager em = getEntityManager();
+    try {
+        TypedQuery<Autor> query = em.createQuery("SELECT a FROM Autor a WHERE a.pseudonimo = :name", Autor.class);
+        query.setParameter("name", name);
+        List<Autor> resultados = query.getResultList();
+        
+        if (!resultados.isEmpty()) {
+            return resultados.get(0); // Devuelve el primero encontrado
+        } else {
+            return null; // No encontró ningún autor
+        }
+    } finally {
+        em.close();
+    }
+}
+
 
     public int getAutorCount() {
         EntityManager em = getEntityManager();

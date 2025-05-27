@@ -76,6 +76,10 @@ public class ControladoraPersistencia {
         return listaAutores;
     }
 
+    public Autor traerAutorNombre(String pseudonimo) {
+        return autJpa.findAutorByName(pseudonimo);
+    }
+
     
     
 }

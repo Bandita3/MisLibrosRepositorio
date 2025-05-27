@@ -52,6 +52,11 @@ public class Controladora {
     public Autor traerAutor(int id){
         return controlPersis.traerAutor(id);
     }
+    
+    public Autor traerAutorNombre(String pseudonimo){
+        return controlPersis.traerAutorNombre(pseudonimo);
+    }
+    
     public ArrayList<Autor> traerListaAutores(){
         return controlPersis.traerListaAutores();
     }
