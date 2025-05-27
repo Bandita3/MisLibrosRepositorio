@@ -30,6 +30,14 @@ public class Libro implements Serializable {
         this.numero = numero;
         this.creadores = creadores;
     }
+    
+    public Libro( String titulo, String clasificacion, int numero, List<Autor> creadores) {
+        this.titulo = titulo;
+        this.clasificacion = clasificacion;
+        this.numero = numero;
+        this.creadores = creadores;
+    }
+    
     public void aniadirCreador(Autor autor){
        if (creadores == null) {
         creadores = new ArrayList<>();
