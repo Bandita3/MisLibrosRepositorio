@@ -27,6 +27,12 @@ public class Autor implements Serializable {
         this.pseudonimo = pseudonimo;
         this.librosescritos = librosescritos;
     }
+    
+    public Autor( String pseudonimo, ArrayList<Libro> librosescritos) {
+        this.pseudonimo = pseudonimo;
+        this.librosescritos = librosescritos;
+    }
+    
     public void aniadirLibrosEscritos(Libro libro){
         librosescritos.add(libro);
     }
