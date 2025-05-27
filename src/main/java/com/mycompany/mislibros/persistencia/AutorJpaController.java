@@ -138,7 +138,7 @@ public class AutorJpaController implements Serializable {
 
     public List<Autor> findAutorEntities(int maxResults, int firstResult) {
         return findAutorEntities(false, maxResults, firstResult);
-    }
+    } 
 
     private List<Autor> findAutorEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
