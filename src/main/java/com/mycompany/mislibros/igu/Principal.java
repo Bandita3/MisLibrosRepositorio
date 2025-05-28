@@ -4,9 +4,9 @@
  */
 package com.mycompany.mislibros.igu;
 
-import com.mycompany.mislibros.logica.Autor;
-import com.mycompany.mislibros.logica.Controladora;
-import com.mycompany.mislibros.logica.Libro;
+import com.mycompany.mislibros.modelo.Autor;
+import com.mycompany.mislibros.controlador.Controladora;
+import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;

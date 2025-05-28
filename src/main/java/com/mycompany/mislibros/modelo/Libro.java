@@ -1,4 +1,5 @@
-    package com.mycompany.mislibros.logica;
+    package com.mycompany.mislibros.modelo;
+import com.mycompany.mislibros.modelo.Autor;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
