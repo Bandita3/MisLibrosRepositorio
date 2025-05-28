@@ -132,17 +132,17 @@ public class Principal extends javax.swing.JFrame {
 
         tablaLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Titulo", "Clasificacion", "Numero"
+                "ID", "Titulo", "Clasificacion", "Numero", "Autor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -274,7 +274,8 @@ public class Principal extends javax.swing.JFrame {
             libro.getId(),
             libro.getTitulo(),
             libro.getClasificacion(),
-            libro.getNumero()
+            libro.getNumero(),
+            libro.ObtenerCreadores()
         });
     }
     }
