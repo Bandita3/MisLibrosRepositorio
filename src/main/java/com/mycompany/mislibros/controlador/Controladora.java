@@ -32,7 +32,7 @@ public class Controladora {
         controlPersis.editarLibro(lib);
     }
     public Libro traerLibro(int id){
-        return controlPersis.traerLibro(id);
+        return controlPersis.traerLibro(id); //se comunica con la controladora de persistencia
     }
     public ArrayList<Libro> traerListaLibros(){
         return controlPersis.traerListaLibros();
