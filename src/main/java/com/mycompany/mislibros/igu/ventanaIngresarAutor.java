@@ -145,22 +145,20 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAniadirActionPerformed
-        try {// Leer el ID del libro
-            int idLibro = Integer.parseInt(txtIdLibro.getText());
-            // Leer el pseudónimo del autor
+        try {// Pido los datos y los guardo en mi variable
+            int idLibro = Integer.parseInt(txtIdLibro.getText());   
             String pseudonimoAutor = txtPseudonimoAutor.getText();
+            
+            Libro libro = control.traerLibro(idLibro);// Traigo el libro desde la base de datos
 
-            // Traer el libro desde la base
-            Libro libro = control.traerLibro(idLibro);
-
-            LogicaInsertarAutor logica = new LogicaInsertarAutor(control);
-            logica.agregarAutorALibro(idLibro, pseudonimoAutor);
+            LogicaInsertarAutor logica = new LogicaInsertarAutor(control);//Instancia a nuestra logicaInsertarAutor
+            logica.agregarAutorALibro(idLibro, pseudonimoAutor);//llamo al método de mi lógica
                     
 
             JOptionPane.showMessageDialog(this, "Autor agregado al libro correctamente.");
             this.dispose();
 
-            // limpiar campos
+            // limpio campos
             txtPseudonimoAutor.setText("");
             txtIdLibro.setText("");
 
