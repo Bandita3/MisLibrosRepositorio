@@ -15,7 +15,7 @@ public class ControladoraPersistencia {
     /*Aca van a ir todos los metodos que se conecten con la base de datos
     como traer y colocar*/
     public List<Libro> traerLibros(){
-        return libJpa.findLibroEntities();
+        return libJpa.findLibroEntities(); //se comunica con nuestro JPa que trae el libro de la base de datos
         //SELECT * FROM LIBROS
     }
 

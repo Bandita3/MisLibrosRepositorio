@@ -6,6 +6,7 @@ package com.mycompany.mislibros.igu;
 
 import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.controlador.Controladora;
+import com.mycompany.mislibros.logica.LogicaInsertarAutor;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -145,61 +146,28 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
 
     private void btnAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAniadirActionPerformed
         try {// Leer el ID del libro
-        int idLibro = Integer.parseInt(txtIdLibro.getText());
-        // Leer el pseudónimo del autor
-        String pseudonimoAutor = txtPseudonimoAutor.getText();
+            int idLibro = Integer.parseInt(txtIdLibro.getText());
+            // Leer el pseudónimo del autor
+            String pseudonimoAutor = txtPseudonimoAutor.getText();
 
-        // Traer el libro desde la base
-        Libro libro = control.traerLibro(idLibro);
+            // Traer el libro desde la base
+            Libro libro = control.traerLibro(idLibro);
 
-        if (libro == null) {
-            JOptionPane.showMessageDialog(this, "No se encontró el libro con ID: " + idLibro);
-            return;
-        }
+            LogicaInsertarAutor logica = new LogicaInsertarAutor(control);
+            logica.agregarAutorALibro(idLibro, pseudonimoAutor);
+                    
 
-        // Buscar autor existente recorriendo la lista (porque no tenés método traerAutorPorPseudonimo)
-        Autor autorExistente = null;
-        for (Autor a : control.traerListaAutores()) {
-            if (a.getPseudonimo().equalsIgnoreCase(pseudonimoAutor)) {
-                autorExistente = a;
-                break;
-            }
-        }
+            JOptionPane.showMessageDialog(this, "Autor agregado al libro correctamente.");
+            this.dispose();
 
-        Autor autor;
+            // limpiar campos
+            txtPseudonimoAutor.setText("");
+            txtIdLibro.setText("");
 
-        if (autorExistente != null) {
-            autor = autorExistente;
-        } else {
-            // Crear nuevo autor con pseudónimo y lista vacía de libros
-            autor = new Autor();
-            autor.setPseudonimo(pseudonimoAutor);
-            autor.setLibrosescritos(new ArrayList<>());
-            control.crearAutor(autor);
-        }
-
-        // Agregar autor a la lista de creadores del libro si no está
-        if (!libro.getCreadores().contains(autor)) {
-            libro.getCreadores().add(autor);
-        }
-
-        // Agregar libro a la lista de libros del autor
-        if (!autor.getLibrosescritos().contains(libro)) {
-            autor.getLibrosescritos().add(libro);
-        }
-
-        // Guardar cambios en el libro (editar)
-        control.editarLibro(libro);
-
-        JOptionPane.showMessageDialog(this, "Autor agregado al libro correctamente.");
-        this.dispose();
-
-        // limpiar campos
-        txtPseudonimoAutor.setText("");
-        txtIdLibro.setText("");
-
-    } catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "ID del libro inválido.", "Error", JOptionPane.ERROR_MESSAGE);
+        }catch(Exception e){
+             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAniadirActionPerformed
 
