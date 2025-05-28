@@ -1,12 +1,12 @@
 package com.mycompany.mislibros.persistencia;
 
-import com.mycompany.mislibros.logica.Autor;
+import com.mycompany.mislibros.modelo.Autor;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import com.mycompany.mislibros.logica.Libro;
+import com.mycompany.mislibros.modelo.Libro;
 import com.mycompany.mislibros.persistencia.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
 import java.util.List;

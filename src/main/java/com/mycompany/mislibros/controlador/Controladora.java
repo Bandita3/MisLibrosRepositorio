@@ -1,5 +1,7 @@
-package com.mycompany.mislibros.logica;
+package com.mycompany.mislibros.controlador;
 
+import com.mycompany.mislibros.modelo.Libro;
+import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
 import java.util.List;
