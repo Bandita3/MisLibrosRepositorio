@@ -6,6 +6,7 @@ package com.mycompany.mislibros.igu;
 
 import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.controlador.Controladora;
+import com.mycompany.mislibros.logica.LogicaCrearLibro;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -107,12 +108,6 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAniadir, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,15 +118,23 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
                             .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 19, Short.MAX_VALUE))))
+                        .addGap(13, 25, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnAniadir, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,11 +156,11 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAniadir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85))
+                    .addComponent(btnAniadir)
+                    .addComponent(BtnCancelar))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,14 +170,14 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -193,41 +196,26 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClasificacionActionPerformed
 
     private void btnAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAniadirActionPerformed
+        try {
+            /*Pido datos, los guardo en mi variable...
+            */
+            String titulo = txtTitulo.getText();
+            String clasificacion = txtClasificacion.getText();
+            int numero = Integer.parseInt(txtNumero.getText());
+            String autorPseudonimo = txtAutor.getText();
+            /*...los mando a mi LogicaCrearLibro 
+            para que lo cree.*/
+            LogicaCrearLibro logica = new LogicaCrearLibro(control);
+            logica.crearLibro(titulo, clasificacion, numero, autorPseudonimo);
 
-        //paso 1: Obtengo los datos del formulario
-        //int idLibro = Integer.parseInt(txtIdLibro.getText());
-        String titulo = txtTitulo.getText();
-        String clasificacion = txtClasificacion.getText();
-            //Convierto el texto a un entero para poder asignarlo a mi variable
-        int numero = Integer.parseInt(txtNumero.getText());
-        //int idAutor = Integer.parseInt(txtIdAutor.getText());
-        String autorPseudonimo = txtAutor.getText();
-        //Paso 2: verificar existencia del autor
-        Autor aut = control.traerAutorNombre(autorPseudonimo);
-        if (aut == null){
-            //Si no existe lo creamos
-            ArrayList<Libro> librosescritos = new ArrayList<>();
-            aut = new Autor( autorPseudonimo, librosescritos);
-            control.crearAutor(aut); //Lo subimos a la base de datos
-            System.out.println("Autor nuevo creado");
-        }else{
-            //Si existe, verificamos que el pseudónimo coincida
-            if(!aut.getPseudonimo().equals(autorPseudonimo)){
-                JOptionPane.showMessageDialog(this, "Ya existe un autor con ese ID, pero con"
-                + "otro pseudópnimo");
-                return;
-            }else{
-                System.out.println("Autor existente reutilizado");
-            }
+            JOptionPane.showMessageDialog(this, "Libro creado correctamente.");
+            this.dispose();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Número inválido", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-        //Paso 3: crear el libro con la lista de autores
-        ArrayList<Autor> ListaAutores = new ArrayList();
-        ListaAutores.add(aut);      
-        Libro lib = new Libro( titulo, clasificacion, numero, ListaAutores);
-        //Paso 4: guardo el libro
-        control.crearLibro(lib); //Guardamos el libro en la base de datos
-        //Paso 5: Cerramos la ventana
-        dispose();
     }//GEN-LAST:event_btnAniadirActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
