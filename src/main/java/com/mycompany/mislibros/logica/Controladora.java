@@ -1,4 +1,4 @@
-package com.mycompany.mislibros.controlador;
+package com.mycompany.mislibros.logica;
 
 import com.mycompany.mislibros.modelo.Libro;
 import com.mycompany.mislibros.modelo.Autor;

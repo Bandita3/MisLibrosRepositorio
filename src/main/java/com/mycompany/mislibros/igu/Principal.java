@@ -5,7 +5,7 @@
 package com.mycompany.mislibros.igu;
 
 import com.mycompany.mislibros.modelo.Autor;
-import com.mycompany.mislibros.controlador.Controladora;
+import com.mycompany.mislibros.logica.Controladora;
 import com.mycompany.mislibros.logica.LogicaBuscarAutoresDeLibro;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
@@ -200,9 +200,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    
     private void btnEliminarActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActorActionPerformed
-        ventanaIngresarAutor ventIngAut = new ventanaIngresarAutor(control);
-        ventIngAut.setVisible(true);
-        ventIngAut.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_btnEliminarActorActionPerformed
 
     private void btnIngresarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarLibroActionPerformed
