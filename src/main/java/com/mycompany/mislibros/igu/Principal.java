@@ -26,6 +26,7 @@ public class Principal extends javax.swing.JFrame {
         //Cuando se abre la interfaz gráfica, se crea una instancia a la lógica.
         control = new Controladora();
         mostrarListaLibros();
+        agregarTooltipALaTabla();
     }
     
     /**
@@ -132,17 +133,17 @@ public class Principal extends javax.swing.JFrame {
 
         tablaLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Titulo", "Clasificacion", "Numero", "Autor"
+                "ID", "Titulo", "Clasificacion", "Numero"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -175,7 +176,7 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void btnIngresarActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActorActionPerformed
         ventanaIngresarAutor ventIngAut = new ventanaIngresarAutor(control);
         ventIngAut.setVisible(true);
@@ -275,8 +276,50 @@ public class Principal extends javax.swing.JFrame {
             libro.getTitulo(),
             libro.getClasificacion(),
             libro.getNumero(),
-            libro.ObtenerCreadores()
+            libro.obtenerCreadores()
         });
     }
     }
+    //Este metodo muestra el autor al arrastrar el mouse sobre un libro
+    private void agregarTooltipALaTabla(){
+        tablaLibros.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+            @Override
+            public void mouseMoved(java.awt.event.MouseEvent e){
+            //Obtenemos la fila donde esta parado el mouse
+            int fila = tablaLibros.rowAtPoint(e.getPoint());
+            //Obtenemos la columna donde esta parado el mouse
+            int columna = tablaLibros.columnAtPoint(e.getPoint());
+            
+            /*Verificamos si el mouse esta parado sobre un libro, de ser asi muestra un cuadro con el autor,
+            Si no hay ningun libro, no muestra nada (Sin esto se mostraria la informacion fuera de la tabla)
+            
+            */
+            if (fila > -1 && columna >1) {
+                
+                //Obtenemos el id que esta ubicado en la columna 0
+                int idLibro = (int) tablaLibros.getValueAt(fila, 0); 
+                
+                //Traemos el objeto libro desde su id
+                Libro libro = control.traerLibro(idLibro);
+                
+                //Si el libro existe, se mostrara su autor
+                if(libro != null) {
+                    //Usamos html para hacer un salto de linea a la hora de mostrar los autores(En caso de que haya mas de un autor)
+                    tablaLibros.setToolTipText("<html><b> Autor:" + libro.obtenerCreadores());
+                
+                //Si no existe, no se mostrara nada
+                } else {
+                    tablaLibros.setToolTipText(null);
+                }
+                
+            }
+            
+            
+        }
+        
+        
+    });
+    
+}
+    
 }

@@ -6,6 +6,7 @@ import com.mycompany.mislibros.persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Controladora {
     //esta controladora llama a la controladora de persistencia
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
@@ -63,6 +64,8 @@ public class Controladora {
         return controlPersis.traerListaAutores();
     }
     //Métodos ventanaPrincipal
+    
+    
     
 }
 
