@@ -41,76 +41,37 @@ public class Principal extends javax.swing.JFrame {
         jScrollBar1 = new javax.swing.JScrollBar();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtIdLibro = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         btnIngresarLibro = new javax.swing.JButton();
-        btnIngresarActor = new javax.swing.JButton();
+        btnEliminarActor = new javax.swing.JButton();
         btnVerLibros = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaLibros = new javax.swing.JTable();
         btnEliminar = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
+        btnIngresarActor1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Elephant", 0, 36)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/libro (1) (1).png"))); // NOI18N
         jLabel2.setText("Mi lista de libros");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 20, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel1.setText("Buscar autor");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 196, -1, -1));
-
-        jLabel3.setText("ingrese la id de un libro:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 230, -1, -1));
-
-        txtIdLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdLibroActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtIdLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 226, 105, -1));
-
-        btnBuscar.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 251, 70, -1));
-
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 285, 249, 115));
-
-        btnIngresarLibro.setText("Ingresar un libro");
+        btnIngresarLibro.setText("Ingresar libro");
         btnIngresarLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarLibroActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIngresarLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 291, 193, 43));
 
-        btnIngresarActor.setText("Ingresar un autor");
-        btnIngresarActor.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarActor.setText("Eliminar autor");
+        btnEliminarActor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarActorActionPerformed(evt);
+                btnEliminarActorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIngresarActor, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 244, 193, 35));
 
         btnVerLibros.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         btnVerLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recargarbtn (1) (1).png"))); // NOI18N
@@ -120,7 +81,6 @@ public class Principal extends javax.swing.JFrame {
                 btnVerLibrosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 47, -1, -1));
 
         btnSalir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnSalir.setText("Salir");
@@ -129,7 +89,6 @@ public class Principal extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 83, -1));
 
         tablaLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -152,36 +111,99 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tablaLibros);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 79, 515, 99));
-
         btnEliminar.setText("Eliminar libro seleccionado");
+        btnEliminar.setMaximumSize(new java.awt.Dimension(100, 23));
+        btnEliminar.setMinimumSize(new java.awt.Dimension(100, 23));
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 192, 42));
-        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 50, 50));
+
+        btnIngresarActor1.setText("Ingresar autor");
+        btnIngresarActor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActor1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel2)
+                        .addGap(4, 4, 4)
+                        .addComponent(btnVerLibros))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIngresarActor1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107)
+                        .addComponent(btnIngresarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarActor, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(lblFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btnVerLibros)))
+                .addGap(7, 7, 7)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnIngresarActor1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(btnIngresarLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEliminarActor, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addGap(16, 16, 16))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
-    private void btnIngresarActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActorActionPerformed
+    private void btnEliminarActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActorActionPerformed
         ventanaIngresarAutor ventIngAut = new ventanaIngresarAutor(control);
         ventIngAut.setVisible(true);
         ventIngAut.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnIngresarActorActionPerformed
+    }//GEN-LAST:event_btnEliminarActorActionPerformed
 
     private void btnIngresarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarLibroActionPerformed
         ventanaIngresarLibro ventIngLib = new ventanaIngresarLibro(control);
@@ -192,26 +214,6 @@ public class Principal extends javax.swing.JFrame {
     private void btnVerLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerLibrosActionPerformed
         mostrarListaLibros();
     }//GEN-LAST:event_btnVerLibrosActionPerformed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        try {
-            //Guardo la ID del libro desde el campo de texto
-            int idLibro = Integer.parseInt(txtIdLibro.getText());
-
-            //Buscamos el libro en la base de datos
-            LogicaBuscarAutoresDeLibro logicaBuscar = new LogicaBuscarAutoresDeLibro(control);
-            String resultado = logicaBuscar.obtenerAutoresDeLibro(idLibro);
-
-        jTextArea2.setText(resultado);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Por favor ingresá un ID de libro válido",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(this, ex.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.out.println("Cerrando programa....."); 
@@ -239,29 +241,24 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void txtIdLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdLibroActionPerformed
+    private void btnIngresarActor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActor1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdLibroActionPerformed
+    }//GEN-LAST:event_btnIngresarActor1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnIngresarActor;
+    private javax.swing.JButton btnEliminarActor;
+    private javax.swing.JButton btnIngresarActor1;
     private javax.swing.JButton btnIngresarLibro;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnVerLibros;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JTable tablaLibros;
-    private javax.swing.JTextField txtIdLibro;
     // End of variables declaration//GEN-END:variables
     
     public void mostrarListaLibros(){
