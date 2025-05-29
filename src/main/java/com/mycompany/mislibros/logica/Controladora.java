@@ -1,10 +1,11 @@
-package com.mycompany.mislibros.controlador;
+package com.mycompany.mislibros.logica;
 
 import com.mycompany.mislibros.modelo.Libro;
 import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Controladora {
     //esta controladora llama a la controladora de persistencia
@@ -63,6 +64,8 @@ public class Controladora {
         return controlPersis.traerListaAutores();
     }
     //Métodos ventanaPrincipal
+    
+    
     
 }
 

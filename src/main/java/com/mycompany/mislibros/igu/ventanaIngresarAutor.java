@@ -5,7 +5,7 @@
 package com.mycompany.mislibros.igu;
 
 import com.mycompany.mislibros.modelo.Autor;
-import com.mycompany.mislibros.controlador.Controladora;
+import com.mycompany.mislibros.logica.Controladora;
 import com.mycompany.mislibros.logica.LogicaInsertarAutor;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;

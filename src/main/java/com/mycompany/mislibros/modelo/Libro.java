@@ -85,10 +85,10 @@ public class Libro implements Serializable {
         this.creadores = creadores;
     }
 
-    public String ObtenerCreadores(){
+    public String obtenerCreadores(){
         StringBuilder nombres = new StringBuilder();
         for(Autor a : creadores){
-            nombres.append(a.getPseudonimo()).append("\n ");
+            nombres.append(a.getPseudonimo()).append("<br>");
         }
         return nombres.toString();
     }   
