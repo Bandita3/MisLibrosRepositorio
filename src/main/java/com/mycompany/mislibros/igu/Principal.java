@@ -39,33 +39,20 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
+        btnEliminarActor = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnIngresarLibro = new javax.swing.JButton();
-        btnEliminarActor = new javax.swing.JButton();
         btnVerLibros = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaLibros = new javax.swing.JTable();
         btnEliminar = new javax.swing.JButton();
-        lblFondo = new javax.swing.JLabel();
         btnIngresarActor1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel2.setFont(new java.awt.Font("Elephant", 0, 36)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/libro (1) (1).png"))); // NOI18N
-        jLabel2.setText("Mi lista de libros");
-
-        btnIngresarLibro.setText("Ingresar libro");
-        btnIngresarLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarLibroActionPerformed(evt);
-            }
-        });
-
+        btnEliminarActor.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnEliminarActor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/16083460.png"))); // NOI18N
         btnEliminarActor.setText("Eliminar autor");
         btnEliminarActor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,16 +60,33 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel2.setFont(new java.awt.Font("Eras Bold ITC", 0, 48)); // NOI18N
+        jLabel2.setText("MI  BIBLIOTECA");
+
+        btnIngresarLibro.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnIngresarLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/12088250.png"))); // NOI18N
+        btnIngresarLibro.setText("Ingresar libro");
+        btnIngresarLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarLibroActionPerformed(evt);
+            }
+        });
+
         btnVerLibros.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        btnVerLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recargarbtn (1) (1).png"))); // NOI18N
-        btnVerLibros.setText("Actualizar");
+        btnVerLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/rotation-arrow-icon-png (1).png"))); // NOI18N
         btnVerLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerLibrosActionPerformed(evt);
             }
         });
 
-        btnSalir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnSalir.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/3661280 (1).png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +115,9 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tablaLibros);
 
-        btnEliminar.setText("Eliminar libro seleccionado");
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/16083460.png"))); // NOI18N
+        btnEliminar.setText("Eliminar libro");
         btnEliminar.setMaximumSize(new java.awt.Dimension(100, 23));
         btnEliminar.setMinimumSize(new java.awt.Dimension(100, 23));
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +126,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnIngresarActor1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnIngresarActor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/business-avatar-icon-with-a-simple-clean-design-featuring-a-man-in-a-suit-suitable-for-online-profiles-or-websites-free-png (1).png"))); // NOI18N
         btnIngresarActor1.setText("Ingresar autor");
         btnIngresarActor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,73 +135,79 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/3965105 (1).png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jLabel2)
-                        .addGap(4, 4, 4)
-                        .addComponent(btnVerLibros))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIngresarActor1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(107, 107, 107)
-                        .addComponent(btnIngresarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminarActor, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(107, 107, 107)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(lblFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnVerLibros)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                .addComponent(btnIngresarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnIngresarActor1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap())))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(btnVerLibros)))
-                .addGap(7, 7, 7)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnIngresarActor1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(btnIngresarLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(15, 15, 15)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnEliminarActor, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addComponent(btnSalir)
-                .addGap(16, 16, 16))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(btnIngresarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(30, 30, 30)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(34, 34, 34)
+                            .addComponent(btnIngresarActor1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(47, 47, 47)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVerLibros))
+                .addGap(132, 132, 132))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -203,45 +217,48 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnEliminarActorActionPerformed
 
-    private void btnIngresarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarLibroActionPerformed
-        ventanaIngresarLibro ventIngLib = new ventanaIngresarLibro(control);
-        ventIngLib.setVisible(true);
-        ventIngLib.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnIngresarLibroActionPerformed
+    private void btnIngresarActor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActor1ActionPerformed
+        // TODO add your handling code here:
+        ventanaIngresarAutor ventIngAut= new ventanaIngresarAutor(control);
+        ventIngAut.setVisible(true);
+        ventIngAut.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnIngresarActor1ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        int filaSeleccionada = tablaLibros.getSelectedRow();
+
+        if (filaSeleccionada >=0){
+
+            int idLibro = (int) tablaLibros.getValueAt(filaSeleccionada, 0);
+
+            int confirmarcion = JOptionPane.showConfirmDialog(this, "Va a eliminar el libro con id: " +idLibro + " ¿Esta seguro?", "Confirmar Eliminacion", JOptionPane.YES_NO_OPTION) ;
+
+            if (confirmarcion == JOptionPane.YES_OPTION){
+                control.eliminarLibro(idLibro);
+
+                mostrarListaLibros();
+                JOptionPane.showMessageDialog(this, "Libro eliminado correctamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un libro para eliminar", "error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.out.println("Cerrando programa.....");
+        System.exit(0); //cierra la aplicación
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnVerLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerLibrosActionPerformed
         mostrarListaLibros();
     }//GEN-LAST:event_btnVerLibrosActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.out.println("Cerrando programa....."); 
-        System.exit(0); //cierra la aplicación
-    }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int filaSeleccionada = tablaLibros.getSelectedRow();
-        
-        if (filaSeleccionada >=0){
-            
-            int idLibro = (int) tablaLibros.getValueAt(filaSeleccionada, 0);
-            
-            int confirmarcion = JOptionPane.showConfirmDialog(this, "Va a eliminar el libro con id: " +idLibro + " ¿Esta seguro?", "Confirmar Eliminacion", JOptionPane.YES_NO_OPTION) ;
-            
-            if (confirmarcion == JOptionPane.YES_OPTION){
-                control.eliminarLibro(idLibro);
-                
-                mostrarListaLibros();
-                JOptionPane.showMessageDialog(this, "Libro eliminado correctamente");    
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un libro para eliminar", "error", JOptionPane.ERROR_MESSAGE);
-            }
-            
-        }
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void btnIngresarActor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActor1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIngresarActor1ActionPerformed
+    private void btnIngresarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarLibroActionPerformed
+        ventanaIngresarLibro ventIngLib = new ventanaIngresarLibro(control);
+        ventIngLib.setVisible(true);
+        ventIngLib.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnIngresarLibroActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -251,11 +268,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresarLibro;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnVerLibros;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel lblFondo;
     private javax.swing.JTable tablaLibros;
     // End of variables declaration//GEN-END:variables
     
