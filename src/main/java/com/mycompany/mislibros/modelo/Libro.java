@@ -17,7 +17,7 @@ public class Libro implements Serializable {
     @Basic
     public String titulo;
     public String clasificacion;
-    public int numero;
+    public int numero; //cambiar a capaginas
     @ManyToMany(mappedBy="librosescritos")
     private List<Autor> creadores;
 

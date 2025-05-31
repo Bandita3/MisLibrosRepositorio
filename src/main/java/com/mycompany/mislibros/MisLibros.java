@@ -1,6 +1,6 @@
 package com.mycompany.mislibros;
 
-import com.mycompany.mislibros.igu.Principal;
+import com.mycompany.mislibros.vista.Principal;
 
 public class MisLibros {
     public static void main(String[] args) {

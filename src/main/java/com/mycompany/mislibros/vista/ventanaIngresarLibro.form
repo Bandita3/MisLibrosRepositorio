@@ -62,7 +62,7 @@
                               <Component id="txtNumero" min="-2" pref="201" max="-2" attributes="0"/>
                               <Component id="txtClasificacion" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="13" pref="25" max="32767" attributes="0"/>
+                          <EmptySpace min="13" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -134,12 +134,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Numero:"/>
+            <Property name="text" type="java.lang.String" value="N&#xb0; p&#xe1;ginas"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Clasificacion:"/>
+            <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">

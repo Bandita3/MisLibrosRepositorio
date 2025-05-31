@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.mislibros.igu;
+package com.mycompany.mislibros.vista;
 
 import com.mycompany.mislibros.modelo.Autor;
-import com.mycompany.mislibros.logica.Controladora;
-import com.mycompany.mislibros.logica.LogicaCrearLibro;
+import com.mycompany.mislibros.controlador.Controladora;
+import com.mycompany.mislibros.controlador.LogicaCrearLibro;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -60,9 +60,9 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
 
         jLabel1.setText("Titulo:");
 
-        jLabel3.setText("Numero:");
+        jLabel3.setText("N° páginas");
 
-        jLabel4.setText("Clasificacion:");
+        jLabel4.setText("Género:");
 
         jLabel5.setText("Autor:");
 
@@ -122,7 +122,7 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
                             .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 25, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
