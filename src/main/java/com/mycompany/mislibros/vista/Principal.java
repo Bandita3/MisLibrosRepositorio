@@ -2,8 +2,8 @@
 package com.mycompany.mislibros.vista;
 
 import com.mycompany.mislibros.modelo.Autor;
-import com.mycompany.mislibros.logica.Controladora;
-import com.mycompany.mislibros.logica.LogicaBuscarAutoresDeLibro;
+import com.mycompany.mislibros.controlador.Controladora;
+import com.mycompany.mislibros.controlador.LogicaBuscarAutoresDeLibro;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import java.util.List;
