@@ -1,5 +1,5 @@
 
-package com.mycompany.mislibros.igu;
+package com.mycompany.mislibros.vista;
 
 import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.logica.Controladora;
