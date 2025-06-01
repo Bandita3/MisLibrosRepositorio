@@ -1,4 +1,4 @@
-package com.mycompany.mislibros.persistencia.exceptions;
+package com.mycompany.mislibros.modelo.exceptions;
 
 public class NonexistentEntityException extends Exception {
     public NonexistentEntityException(String message, Throwable cause) {

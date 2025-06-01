@@ -1,13 +1,15 @@
-package com.mycompany.mislibros.persistencia;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.mislibros.modelo;
 
-import com.mycompany.mislibros.modelo.Autor;
+import com.mycompany.mislibros.modelo.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import com.mycompany.mislibros.modelo.Libro;
-import com.mycompany.mislibros.persistencia.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -16,22 +18,23 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 /**
- * @author Martín_Guerra
+ *
+ * @author Lenovo
  */
- 
 public class AutorJpaController implements Serializable {
 
     public AutorJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
-    //Insertamos constructor que asocie ..
-    public AutorJpaController(){
-        emf = Persistence.createEntityManagerFactory("bibliotecaPU");
-    }
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
+    }
+
+    //////////con
+    public AutorJpaController() {
+        emf = Persistence.createEntityManagerFactory("bibliotecaPU");
     }
 
     public void create(Autor autor) {
@@ -138,7 +141,7 @@ public class AutorJpaController implements Serializable {
 
     public List<Autor> findAutorEntities(int maxResults, int firstResult) {
         return findAutorEntities(false, maxResults, firstResult);
-    } 
+    }
 
     private List<Autor> findAutorEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
@@ -164,24 +167,6 @@ public class AutorJpaController implements Serializable {
             em.close();
         }
     }
-    
-    public Autor findAutorByName(String name) {
-    EntityManager em = getEntityManager();
-    try {
-        TypedQuery<Autor> query = em.createQuery("SELECT a FROM Autor a WHERE a.pseudonimo = :name", Autor.class);
-        query.setParameter("name", name);
-        List<Autor> resultados = query.getResultList();
-        
-        if (!resultados.isEmpty()) {
-            return resultados.get(0); // Devuelve el primero encontrado
-        } else {
-            return null; // No encontró ningún autor
-        }
-    } finally {
-        em.close();
-    }
-}
-
 
     public int getAutorCount() {
         EntityManager em = getEntityManager();
@@ -196,4 +181,20 @@ public class AutorJpaController implements Serializable {
         }
     }
 
+    public Autor findAutorByName(String name) {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery<Autor> query = em.createQuery("SELECT a FROM Autor a WHERE a.pseudonimo = :name", Autor.class);
+            query.setParameter("name", name);
+            List<Autor> resultados = query.getResultList();
+
+            if (!resultados.isEmpty()) {
+                return resultados.get(0); // Devuelve el primero encontrado
+            } else {
+                return null; // No encontró ningún autor
+            }
+        } finally {
+            em.close();
+        }
+    }
 }

@@ -1,13 +1,15 @@
-package com.mycompany.mislibros.persistencia;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.mislibros.modelo;
 
+import com.mycompany.mislibros.modelo.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import com.mycompany.mislibros.modelo.Autor;
-import com.mycompany.mislibros.modelo.Libro;
-import com.mycompany.mislibros.persistencia.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -15,20 +17,21 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
- * @author Martín_Guerra
+ *
+ * @author Lenovo
  */
- 
 public class LibroJpaController implements Serializable {
 
     public LibroJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
-    public LibroJpaController(){
-        emf = Persistence.createEntityManagerFactory("bibliotecaPU");
-    }
+
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
+    }
+    public LibroJpaController(){
+        emf = Persistence.createEntityManagerFactory("bibliotecaPU");
     }
 
     public void create(Libro libro) {
@@ -174,5 +177,5 @@ public class LibroJpaController implements Serializable {
             em.close();
         }
     }
-
+    
 }
