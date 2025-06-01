@@ -1,4 +1,4 @@
-package com.mycompany.mislibros.persistencia.exceptions;
+package com.mycompany.mislibros.modelo.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

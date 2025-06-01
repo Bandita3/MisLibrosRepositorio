@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.mislibros.vista;
 
 import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.controlador.Controladora;
-import com.mycompany.mislibros.controlador.LogicaInsertarAutor;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -63,6 +58,18 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Ingrese el nombre o pseudónimo del autor:");
+
+        txtIdLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdLibroActionPerformed(evt);
+            }
+        });
+
+        txtPseudonimoAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPseudonimoAutorActionPerformed(evt);
+            }
+        });
 
         btnAniadir.setBackground(new java.awt.Color(204, 204, 255));
         btnAniadir.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -156,7 +163,7 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose(); //cierra el programa
+        this.dispose(); //cierra la ventana
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAniadirActionPerformed
@@ -164,10 +171,11 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
             int idLibro = Integer.parseInt(txtIdLibro.getText());   
             String pseudonimoAutor = txtPseudonimoAutor.getText();
             
+            
+            //control. significa que llama ala controladora
             Libro libro = control.traerLibro(idLibro);// Traigo el libro desde la base de datos
 
-            LogicaInsertarAutor logica = new LogicaInsertarAutor(control);//Instancia a nuestra logicaInsertarAutor
-            logica.agregarAutorALibro(idLibro, pseudonimoAutor);//llamo al método de mi lógica
+            control.agregarAutorALibro(idLibro, pseudonimoAutor);//llamo al método de mi controladora
                     
 
             JOptionPane.showMessageDialog(this, "Autor agregado al libro correctamente.");
@@ -183,6 +191,14 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAniadirActionPerformed
+
+    private void txtIdLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdLibroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdLibroActionPerformed
+
+    private void txtPseudonimoAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPseudonimoAutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPseudonimoAutorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

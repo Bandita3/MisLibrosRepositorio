@@ -1,4 +1,4 @@
-package com.mycompany.mislibros.persistencia.exceptions;
+package com.mycompany.mislibros.modelo.exceptions;
 
 public class PreexistingEntityException extends Exception {
     public PreexistingEntityException(String message, Throwable cause) {

@@ -3,7 +3,6 @@ package com.mycompany.mislibros.vista;
 
 import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.controlador.Controladora;
-import com.mycompany.mislibros.controlador.LogicaBuscarAutoresDeLibro;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +39,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnIngresarLibro = new javax.swing.JButton();
-        btnVerLibros = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaLibros = new javax.swing.JTable();
@@ -74,11 +73,11 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnVerLibros.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        btnVerLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/rotation-arrow-icon-png (1).png"))); // NOI18N
-        btnVerLibros.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/rotation-arrow-icon-png (1).png"))); // NOI18N
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerLibrosActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
 
@@ -150,18 +149,13 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnVerLibros)
+                .addComponent(btnActualizar)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnIngresarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnIngresarActor1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(btnIngresarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIngresarActor1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
@@ -182,7 +176,7 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnVerLibros)
+                        .addComponent(btnActualizar)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -212,8 +206,9 @@ public class Principal extends javax.swing.JFrame {
         ventIngAut.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnIngresarActor1ActionPerformed
 
+   
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int filaSeleccionada = tablaLibros.getSelectedRow();
+        int filaSeleccionada = tablaLibros.getSelectedRow();// guarda fila seleccionada de libro 
 
         if (filaSeleccionada >=0){
 
@@ -224,7 +219,7 @@ public class Principal extends javax.swing.JFrame {
             if (confirmarcion == JOptionPane.YES_OPTION){
                 control.eliminarLibro(idLibro);
 
-                mostrarListaLibros();
+                mostrarListaLibros();// actualiza al eliminar
                 JOptionPane.showMessageDialog(this, "Libro eliminado correctamente");
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un libro para eliminar", "error", JOptionPane.ERROR_MESSAGE);
@@ -238,11 +233,12 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0); //cierra la aplicación
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnVerLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerLibrosActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         mostrarListaLibros();
-    }//GEN-LAST:event_btnVerLibrosActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnIngresarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarLibroActionPerformed
+      
         ventanaIngresarLibro ventIngLib = new ventanaIngresarLibro(control);
         ventIngLib.setVisible(true);
         ventIngLib.setLocationRelativeTo(null);
@@ -250,12 +246,12 @@ public class Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEliminarActor;
     private javax.swing.JButton btnIngresarActor1;
     private javax.swing.JButton btnIngresarLibro;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnVerLibros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -305,7 +301,7 @@ public class Principal extends javax.swing.JFrame {
                 //Si el libro existe, se mostrara su autor
                 if(libro != null) {
                     //Usamos html para hacer un salto de linea a la hora de mostrar los autores(En caso de que haya mas de un autor)
-                    tablaLibros.setToolTipText("<html><b> Autor: " + libro.obtenerCreadores());
+                    tablaLibros.setToolTipText("<html> <b>"+libro.obtenerCreadores());
                 
                 //Si no existe, no se mostrara nada
                 } else {
