@@ -212,7 +212,10 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
             String titulo = txtTitulo.getText();
             String clasificacion = txtClasificacion.getText();
             int numero = Integer.parseInt(txtNumero.getText());
-            String autorPseudonimo = txtAutor.getText();
+            String autorPseudonimo = txtAutor.getText(); 
+            if(autorPseudonimo.equals("")){//cuando ingreso vacio el pseudonimo,  se guarde anonimo
+                autorPseudonimo ="Anónimo";
+            }
             /*...los mando a mi LogicaCrearLibro 
             para que lo cree.*/
             LogicaCrearLibro logica = new LogicaCrearLibro(control);
