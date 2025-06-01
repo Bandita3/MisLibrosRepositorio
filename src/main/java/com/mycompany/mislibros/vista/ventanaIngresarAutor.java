@@ -50,15 +50,22 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel2.setText("Añadir autor");
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("¿A que libro quieres añadir el autor?");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("ID del libro:");
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Ingrese el nombre o pseudónimo del autor:");
 
+        btnAniadir.setBackground(new java.awt.Color(204, 204, 255));
+        btnAniadir.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnAniadir.setText("Añadir");
         btnAniadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +73,8 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar.setBackground(new java.awt.Color(204, 204, 255));
+        btnCancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +91,7 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -99,7 +108,7 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(jLabel2)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +147,7 @@ public class ventanaIngresarAutor extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
