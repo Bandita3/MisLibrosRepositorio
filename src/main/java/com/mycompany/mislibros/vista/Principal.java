@@ -238,6 +238,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnIngresarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarLibroActionPerformed
+      
         ventanaIngresarLibro ventIngLib = new ventanaIngresarLibro(control);
         ventIngLib.setVisible(true);
         ventIngLib.setLocationRelativeTo(null);
@@ -300,7 +301,7 @@ public class Principal extends javax.swing.JFrame {
                 //Si el libro existe, se mostrara su autor
                 if(libro != null) {
                     //Usamos html para hacer un salto de linea a la hora de mostrar los autores(En caso de que haya mas de un autor)
-                    tablaLibros.setToolTipText("<html><b> Autor: " + libro.obtenerCreadores());
+                    tablaLibros.setToolTipText("<html> <b>"+libro.obtenerCreadores());
                 
                 //Si no existe, no se mostrara nada
                 } else {

@@ -114,7 +114,7 @@ public class Controladora {
             autor = new Autor();
             autor.setPseudonimo(pseudonimoAutor);
             autor.setLibrosescritos(new ArrayList<>());
-            crearAutor(autor);
+            autJpa.create(autor);
         }
 
         // Agregar autor al libro si no está
@@ -128,9 +128,38 @@ public class Controladora {
         }
 
         // Guardar cambios en el libro
-        editarLibro(libro);
+        libJpa.edit(libro);
 
         return true;
+    }
+    
+    ////logica crear libro
+    
+     public void crearLibro(String titulo, String clasificacion, int numero, String pseudonimoAutor) throws Exception {
+        //  verificar existencia del autor
+        Autor autor = traerAutorNombre(pseudonimoAutor);
+        //si no existe el autor en la base de datos...
+        if (autor == null) {//...Creo el autor.
+            autor = new Autor(pseudonimoAutor, new ArrayList<>());
+            crearAutor(autor); //sube el autor a la base de datos
+            System.out.println("Autor nuevo creado");
+        } else {/*...Si ya existe un autor con esa ID en la base de datos pero con otro pseudonimo,
+             aviso por pantalla*/
+            if (!autor.getPseudonimo().equals(pseudonimoAutor)) {
+                throw new Exception("Ya existe un autor con ese ID, pero con otro pseudónimo");
+            } else {/*Si ya existe el autor con esa ID y pseudonimo, 
+                insertamos ese autor al libro.*/
+                System.out.println("Autor existente reutilizado");
+            }
+        }
+
+        // creamos el libro y lo asociamos al autor
+        ArrayList<Autor> listaAutores = new ArrayList<>();
+        listaAutores.add(autor);
+        Libro libro = new Libro(titulo, clasificacion, numero, listaAutores);
+
+        // Lo subimos a la base de datos.
+        crearLibro(libro);//sube el libro a la base de datos
     }
     
     

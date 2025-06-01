@@ -181,7 +181,7 @@ public class AutorJpaController implements Serializable {
         }
     }
 
-    public Autor findAutorByName(String name) {
+    public Autor findAutorByName(String name) { //busca por nombre 
         EntityManager em = getEntityManager();
         try {
             TypedQuery<Autor> query = em.createQuery("SELECT a FROM Autor a WHERE a.pseudonimo = :name", Autor.class);

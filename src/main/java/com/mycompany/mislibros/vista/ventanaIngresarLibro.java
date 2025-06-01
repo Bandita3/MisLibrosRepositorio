@@ -6,7 +6,6 @@ package com.mycompany.mislibros.vista;
 
 import com.mycompany.mislibros.modelo.Autor;
 import com.mycompany.mislibros.controlador.Controladora;
-import com.mycompany.mislibros.controlador.LogicaCrearLibro;
 import com.mycompany.mislibros.modelo.Libro;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -19,7 +18,6 @@ import javax.swing.JOptionPane;
 public class ventanaIngresarLibro extends javax.swing.JFrame {
 
     private Controladora control;
-
     /**
      * Creates new form ventanaIngresarLibro
      */
@@ -216,10 +214,10 @@ public class ventanaIngresarLibro extends javax.swing.JFrame {
             if(autorPseudonimo.equals("")){//cuando ingreso vacio el pseudonimo,  se guarde anonimo
                 autorPseudonimo ="Anónimo";
             }
-            /*...los mando a mi LogicaCrearLibro 
+            /*los mando a mi controladora 
             para que lo cree.*/
-            LogicaCrearLibro logica = new LogicaCrearLibro(control);
-            logica.crearLibro(titulo, clasificacion, numero, autorPseudonimo);
+          
+            control.crearLibro(titulo, clasificacion, numero, autorPseudonimo);
 
             JOptionPane.showMessageDialog(this, "Libro creado correctamente.");
             this.dispose();
