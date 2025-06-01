@@ -305,7 +305,7 @@ public class Principal extends javax.swing.JFrame {
                 //Si el libro existe, se mostrara su autor
                 if(libro != null) {
                     //Usamos html para hacer un salto de linea a la hora de mostrar los autores(En caso de que haya mas de un autor)
-                    tablaLibros.setToolTipText("<html><b> Autor:" + libro.obtenerCreadores());
+                    tablaLibros.setToolTipText("<html><b> Autor: " + libro.obtenerCreadores());
                 
                 //Si no existe, no se mostrara nada
                 } else {
